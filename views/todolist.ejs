@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../public/todolist.css">
+    <link rel="stylesheet" href="../public/nameEdit.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('nav.html') %>
+        <h4 class="title">Today todoList</h4>
+        <div class="write_page">
+            <div class="list">
+                <ul class="list_ul">
+                    <% for(let todo of list) { %>
+                        <li class="list_li">
+                            <p><%= todo.title %></p>    
+                            <div class="edit_button"><a href="/edit/<%= todo._id%>">Edit</a></div>
+                            <button class="del_btn" data-id="<%= todo._id %>">Clear</button>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+            <button class="write"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
+            <form class="write_form" action="/todolistadd" method="POST">
+                <input class="write_input" type="text" placeholder="Write today's to do." maxlength="15" name="title">
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/todolist.js"></script>
+    <script>
+            
+        $('.del_btn').on('click', function(e) {
+            let nClick = $(this);
+            let  postNum = e.target.dataset.id;
+            $.ajax({
+                method : "DELETE",
+                url : "/delete",
+                data : {_id: postNum}
+            }).done(function(result){
+                nClick.parent("li").fadeOut();
+                console.log("성공했어염");
+            }).fail(function(result) {
+
+            });
+        });
+        $('.menu_box').on('click',function(e){
+            $('.slide_box').toggleClass('on');
+            if($('.slide_box').hasClass('on')){
+                $('.title').css("opacity",0);
+                $('.write_page').css("opacity",0);
+            } else {
+                $('.title').css("opacity",1);
+                $('.write_page').css("opacity",1);
+            }
+        });
+        $('.write').on('click',function(){
+            $('.write_input').toggleClass('on');
+        });
+    </script>
+</body>
+</html>

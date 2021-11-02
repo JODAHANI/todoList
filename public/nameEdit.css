@@ -1,0 +1,15 @@
+/* .name_edit_form { 
+    position: absolute; bottom: 10px; right: 10px; z-index: 5; width: 100px; height: 100px; 
+}
+.name_edit_input{
+    width: 0px; position: absolute; top: -570px; left: -175px; border: none; border-bottom: 2px solid lightgray;  background: none; color: white; transition: all 0.3s; opacity: 0;
+}
+.name_edit_input.on{
+    width: 100px; opacity: 1;
+}
+.name_edit_btn{
+    position: absolute; bottom: 0; right: 0px; border: none; background: none;
+}
+.fa-pencil-square-o{
+    color: #fff; cursor: pointer; 
+} */

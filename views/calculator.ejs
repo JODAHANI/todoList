@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/home.css">
+    <link rel="stylesheet" href="../public/calculator.css">
+    <link rel="stylesheet" href="../public/nameEdit.css">
+    <title>Calender</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('nav.html')%>
+        <table class="calculator" cellspacing="10">
+            <tr>
+                <td class="value" colspan="4">0</td>
+            </tr>
+            <tr>
+                <td>AC</td>
+                <td>Del</td>
+                <td>%</td>
+                <td>/</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+            </tr>
+            <tr>
+                <td colspan="2">0</td>
+                <td>.</td>
+                <td>=</td>
+            </tr>
+        </table>
+    </div>
+    <script src="../js/calculator.js"></script>
+    <script src="../js/nameCheck.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $('.menu_box').on('click',function(e){
+        $('.slide_box').toggleClass('on');
+    });
+    </script>
+</body>
+</html>

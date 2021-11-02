@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/home.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Be Simple</title>
+</head>
+<body>
+    <div class="container">
+        <%- include('nav.html')%>
+        <div class="greeting">
+            <p class="greeting2"></p>
+            <form class="greeting_form" action="">
+                <input class="input" type="text" placeholder="Write Name :D">
+            </form>
+            <button class="text_edit"><i class="fa fa-pencil fa-lg pencil2" aria-hidden="true"></i></button>
+            <form class="text_edit_form" >
+                <input class="text_edit_input" type="text" placeholder="변경하실 문구를 입력해주세요." maxlength="15">
+            </form>
+
+        </div>
+        
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../js/home.js"></script>
+<script>
+    $('.menu_box').on('click',function(e){
+        $('.slide_box').toggleClass('on');
+    });
+    $('.text_edit').on('click',function(){
+        $('.text_edit_input').toggleClass('on');
+    });
+    $('.name_edit_btn').on('click',function(){
+        $('.name_edit_input').toggleClass('on');
+    });
+</script>
+</html>
+
+
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/home.css">
+    <link rel="stylesheet" href="../public/calender.css">
+    <link rel="stylesheet" href="../public/nameEdit.css">
+    <title>Calender</title>
+</head>
+
+<body>
+    <div class="conatainer">
+        <%- include('nav.html')%>
+        <!-- <input type="text" id="input_date" />  -->
+        <div id="div_calendar" style="text-align: center;">
+            <div>
+                <button type="button" onclick="changeMonth(-1)"><span class="left">◁</span></button>
+                <input type="number" id="year" value="2021" style="width:80px;display:inline-block;" class="form-control" />
+                <select id="month" class="form-control" style="width:80px;display:initial;" onchange="changeMonth();">
+                    <option value="1">1월</option>
+                    <option value="2">2월</option>
+                    <option value="3">3월</option>
+                    <option value="4">4월</option>
+                    <option value="5">5월</option>
+                    <option value="6">6월</option>
+                    <option value="7">7월</option>
+                    <option value="8">8월</option>
+                    <option value="9">9월</option>
+                    <option value="10">10월</option>
+                    <option value="11">11월</option>
+                    <option value="12">12월</option>
+                </select>
+                <button type="button"onclick="changeMonth(1)" ><span class="right">▷</span></button>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>일</th>
+                        <th>월</th>
+                        <th>화</th>
+                        <th>수</th>
+                        <th>목</th>
+                        <th>금</th>
+                        <th>토</th>
+                    </tr>
+                </thead>
+                <tbody id="tb_body"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../js/home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/calender.js"></script>
+    <script>
+        $('.menu_box').on('click', function (e) {
+            $('.slide_box').toggleClass('on');
+            if($('.slide_box').hasClass('on')){
+                $('.calender').css("opacity",0);
+            } else {
+                $('.calender').css("opacity",1);
+            }
+        });
+    </script>
+</body>
+
+</html>
