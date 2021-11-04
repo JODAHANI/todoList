@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/todolist.css">
-    <link rel="stylesheet" href="../public/nameEdit.css">
     <title>Todo List</title>
 </head>
 <body>
@@ -25,9 +24,9 @@
                     <% } %>
                 </ul>
             </div>
-            <button class="write"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
-            <form class="write_form" action="/todolistadd" method="POST">
-                <input class="write_input" type="text" placeholder="Write today's to do." maxlength="15" name="title">
+            <button class="todo_write"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></button>
+            <form class="todo_write_form" action="/todolistadd" method="POST">
+                <input class="todo_write_input" type="text" placeholder="Write today's to do." maxlength="15" name="title">
             </form>
         </div>
     </div>
@@ -59,8 +58,11 @@
                 $('.write_page').css("opacity",1);
             }
         });
-        $('.write').on('click',function(){
-            $('.write_input').toggleClass('on');
+        $('.todo_write').on('click',function(){
+            $('.todo_write_input').toggleClass('on');
+        });
+        $('.name_edit_btn').on('click',function(){
+            $('.name_edit_input').toggleClass('on');
         });
     </script>
 </body>

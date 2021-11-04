@@ -8,8 +8,12 @@ ul,li{ padding: 0; border: 0; margin: 0;}
 input:focus{outline: none;}
 a{text-decoration: none; color: black;}
 
-
-
+.name_edit_input { padding: 0.5rem 0; text-align: center;}
+.name_edit_form { position: absolute; bottom: 10px; right: 10px; z-index: 5; width: 100px; height: 100px; }
+.name_edit_input{width: 0px; position: absolute; top: -570px; left: -175px; border: none; border-bottom: 2px solid lightgray;  background: none; color: white; transition: all 0.3s; opacity: 0;}
+.name_edit_input.on{width: 100px; opacity: 1;}
+.name_edit_btn{position: absolute; bottom: 0; right: 0px; border: none; background: none;}
+.fa-pencil-square-o{color: #fff; cursor: pointer; }
 
 .slide_box{width: 300px; height: 100%; background-color: #222; position: absolute; left: -300px; top: 0; transition: all 0.3s;}
 .slide_box.on{left: 0px;}
@@ -37,14 +41,14 @@ a{text-decoration: none; color: black;}
 .greeting .input::placeholder{font-size: 25px;}
 .greeting2{font-size: 50px; display: inline-block; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);  opacity: 0; transition: all 1s;}
 
-.write{position: fixed; bottom: 1rem; right: 15px;  width: 30px; height: 30px; cursor: pointer; border: #222 1px solid; background-color: #000; border-radius: 50%; padding: 0; transition: all 1s; opacity: 1;}
+.todo_write{position: fixed; bottom: 1rem; right: 15px;  width: 30px; height: 30px; cursor: pointer; border: #222 1px solid; background-color: #000; border-radius: 50%; padding: 0; transition: all 1s; opacity: 1;}
 .fa-pencil{ position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #fff; transition: all 1s; opacity: 1;}
 
 
-.write_form{position: absolute; bottom: 60px; right: 40px; }
-.write_input{border: none; width: 0px; text-align: center; height: 30px;  transition: all 0.3s; opacity: 0; }
-.write_input.on{width: 190px; opacity: 1; border-bottom: 1px solid lightgray;}
-.write_input::placeholder{color: #555;}
+.todo_write_form{position: absolute; bottom: 60px; right: 40px; }
+.todo_write_input{border: none; width: 0px; text-align: center; height: 30px;  transition: all 0.3s; opacity: 0; }
+.todo_write_input.on{width: 190px; opacity: 1; border-bottom: 1px solid lightgray;}
+.todo_write_input::placeholder{color: #555;}
 
 
 

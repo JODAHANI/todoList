@@ -36,8 +36,8 @@ function change_Name(user) {
 
 function edit_name(e) {
     e.preventDefault()
-    let user = edit_input.value;
-    change_Name(user);
+    let userName = edit_input.value;
+    change_Name(userName);
 }
 
 function check_Login() {
@@ -46,6 +46,7 @@ function check_Login() {
         greeting_form.addEventListener('submit', name_Set);
     } else {
         paintName(user);
+        edit_input.value = user
     }
 }
 
@@ -56,8 +57,6 @@ function paint_greeting(hi) {
     greeting2.animate([{ opacity: 0},{ opacity: 1 }], 1000);         
     
 
-    // pencil.classList.add('on');
-    // edit_button.classList.add('on');
 }
 
 function load_greeting() {
